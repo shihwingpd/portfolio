@@ -18,12 +18,13 @@ Add a project entry in `script.js` using this shape:
 
 ```js
 'new-project': {
+	date: '2026-03',
 	title: 'Project Name',
 	group: 'Band Name',
 	role: 'Gaffer',
 	credits: 'Director: Name; Production: Company',
-	description: 'A short description shown on the detail page.',
 	cover: 'assets/new-project-cover.jpg',
+	video: 'assets/new-project.mp4',
 	images: [
 		'assets/new-project-01.jpg',
 		'assets/new-project-02.jpg'
@@ -32,9 +33,9 @@ Add a project entry in `script.js` using this shape:
 }
 ```
 
-`images` is optional. Add one or more detail photos to enable the left/right gallery controls. Use images at least `1600 px` wide; 4:3 is recommended for consistency, although other ratios are supported. `url` is optional and can point to YouTube, Instagram, Vimeo, or another project link.
+`date` is required in `YYYY-MM` format; the Projects grid sorts newest to oldest automatically. YouTube links use their YouTube thumbnail automatically. For Instagram links or local MP4s, add a saved thumbnail image to `cover`. Grid covers are cropped into a 4:3 frame; JPG or WebP files around 1600 x 1200 px work well.
 
-The grid card must also be added to `index.html`, linking to `project.html?project=new-project`. Once the card uses that project key, its `cover` image will automatically replace the placeholder artwork.
+The card and detail route are generated from this entry. No `index.html` update is needed when adding a project.
 
 For large video files, use Vimeo, YouTube, or another video host rather than committing the video file to GitHub.
 
