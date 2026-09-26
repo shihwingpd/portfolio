@@ -85,6 +85,17 @@ if (project && document.querySelector('.project-page')) {
       projectImage.style.filter = 'none';
       projectImage.classList.add('project-thumbnail-image');
       document.querySelector('#project-art').classList.add('project-thumbnail');
+      projectLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        const player = document.createElement('iframe');
+        player.src = `https://www.youtube-nocookie.com/embed/${youtubeMatch[1]}?autoplay=1&rel=0`;
+        player.title = `${project.title} video`;
+        player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        player.allowFullscreen = true;
+        player.referrerPolicy = 'strict-origin-when-cross-origin';
+        projectLink.replaceWith(player);
+        projectMedia.classList.add('is-playing');
+      });
     }
   } else {
     projectLink.hidden = true;
