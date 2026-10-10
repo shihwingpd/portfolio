@@ -33,11 +33,11 @@ Add a project entry in `script.js` using this shape:
 }
 ```
 
-`date` is required in `YYYY-MM` format; the Projects grid sorts newest to oldest automatically. YouTube links use their YouTube thumbnail automatically. For Instagram links or local MP4s, add a saved thumbnail image to `cover`. Grid covers are cropped into a 4:3 frame; JPG or WebP files around 1600 x 1200 px work well.
+`date` is required in `YYYY-MM` format; the Projects grid sorts newest to oldest automatically. YouTube links use their YouTube thumbnail automatically. For Instagram links or local MP4s, add a saved thumbnail image to `cover`. Grid covers are cropped into a 4:3 frame; JPG or WebP files around 1600 x 1200 px work well. The Sonic Reborn and Chan Ho Yan cover photos are saved in `assets/covers/`.
 
 The card and detail route are generated from this entry. No `index.html` update is needed when adding a project.
 
-For large video files, use Vimeo, YouTube, or another video host rather than committing the video file to GitHub.
+GitHub blocks regular Git files larger than 100 MB. Git LFS can store files up to 2 GB on GitHub Free, but GitHub Pages does not support serving Git LFS assets. Host large portfolio videos on YouTube, Vimeo, or another video host and link/embed them instead; alternatively, compress a video below 100 MB before committing it directly.
 
 ## Preview locally
 

@@ -1,4 +1,8 @@
 const projects = {
+  'sonic-reborn-photo-shooting': { date: '2026-08', title: 'Photo Shooting', group: 'Sonic Reborn', role: 'Gaffer', art: 'art-afterlight', cover: 'assets/covers/sonic-reborn-photo-shooting.jpg' },
+  'chan-ho-yan-dance-theatre': { date: '2026-05', title: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', heading: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', group: 'Chan Ho Yan', role: 'Light Designer', art: 'art-still-water', cover: 'assets/covers/chan-ho-yan-dance-theatre.jpg' },
+  'hyukoh-paul-remake': { date: '2025-05', title: '《Paul》 Remake MV', group: 'HYUKOH', role: 'Gaffer', art: 'art-night-shift', url: 'https://youtu.be/C5jH5oZGg-w?si=1PQgvUEQJ25vMC1P', cover: 'assets/covers/hyukoh-paul-remake.jpg' },
+  'essential-shampoo-advertisement': { date: '2025-03', title: 'Essential Shampoo Advertisement (IG Reels)', group: '@moon.cytt', role: 'Gaffer', art: 'art-soft-focus', url: 'https://www.instagram.com/reel/DHx4JIvB4lI/?stkn=YXhwN3MxOWVmbmlq' },
   'mint-studio-centrestage': { date: '2026-09', title: 'Centrestage', heading: 'mint studio X Centrestage', role: 'Videographer', group: 'Mint Studio X', art: 'art-still-water', url: 'https://www.instagram.com/reel/DdWLYNEzQ41/?stkn=MWhxejdhNG9sbjM2aw==', cover: 'assets/covers/mint-studio-centrestage.jpg' },
   'polyu-dsai-promotion': { date: '2026-04', title: 'Promotion Video', role: 'Gaffer', group: 'PolyU DSAI', art: 'art-soft-focus', cover: 'assets/covers/polyu-dsai-promotion.png' },
   'vincy-so-final-night': { date: '2026-03', title: '《海上、最後の夜》Concept Video', role: 'Gaffer', group: 'Vincy So', art: 'art-afterlight', url: 'https://www.instagram.com/reel/DWteOYgE4Jj/?stkn=MXYxMTE0bHV3cjgyYw==', cover: 'assets/covers/vincy-so-final-night.jpg' },
@@ -9,11 +13,11 @@ const projects = {
   'band-show-recording': { date: '2025-01', title: 'Band Show Recording', role: 'Light Designer', group: 'Tofu Kingdom', art: 'art-soft-focus' },
   'catch-a-feeling': { date: '2025-01', title: 'Catch a Feeling', role: 'Camera Assistant', group: 'Aska Cheung', art: 'art-second-take', url: 'https://www.youtube.com/watch?v=qfCJF0ZAgoA', cover: 'assets/covers/catch-a-feeling.jpg' },
   'animals-in-the-city': { date: '2024-11', title: '《Animals In The City》', role: 'Gaffer', group: 'Short Film', art: 'art-night-shift' },
-  'temporary-love-map': { date: '2024-11', title: '《臨時戀愛地圖》', role: 'Lighting Assistant', group: '創+作', art: 'art-afterlight', url: 'https://www.youtube.com/watch?v=wd1Je2rwF6Q', cover: 'assets/covers/temporary-love-map.jpg' },
+  'temporary-love-map': { date: '2024-11', title: '《臨時戀愛地圖》', role: 'Lighting Assistant', group: '創+作', art: 'art-afterlight', url: 'https://www.youtube.com/watch?v=wd1Je2rwF6Q', cover: 'assets/covers/temporary-love-map.jpg', coverCrop: false },
   'night-glow': { date: '2024-10', title: '《夜光漫遊》', role: 'Camera Assistant', group: 'Venus Chi', art: 'art-still-water', url: 'https://www.youtube.com/watch?v=awYDUVe56_g', cover: 'assets/covers/night-glow.jpg' },
   'ten-number-pier': { date: '2024-07', title: '《十號碼頭的半對》', role: 'Videographer', group: 'OneUp', art: 'art-afterlight', url: 'https://www.youtube.com/watch?v=h4H3I9oFI_s', cover: 'assets/covers/ten-number-pier.jpg' },
-  'bad-good-person': { date: '2024-06', title: '《爛好人》', role: 'Creative', group: '鄭俊弘', art: 'art-soft-focus' },
-  'mo-yang': { date: '2024-12', dateLabel: 'Oct 2023 – Dec 2024', title: '《默羊》', role: 'Gaffer & Colourist', group: 'CUHK Image and Creative Media', art: 'art-afterlight' }
+  'bad-good-person': { date: '2024-06', title: '《爛好人》', role: 'Creative', group: '鄭俊弘', art: 'art-soft-focus', url: 'https://www.youtube.com/watch?v=BUmogArEADU', cover: 'assets/covers/bad-good-person.jpg', coverCrop: false },
+  'mo-yang': { date: '2024-12', dateLabel: 'Oct 2023 – Dec 2024', title: '《默羊》', role: 'Gaffer & Colourist', group: 'CUHK Image and Creative Media', art: 'art-afterlight', url: 'https://youtu.be/vI_-VjNhrOU', cover: 'assets/covers/mo-yang.jpg' }
 };
 
 const projectKey = new URLSearchParams(window.location.search).get('project');
@@ -21,6 +25,12 @@ const project = projects[projectKey];
 
 const positionCase = (value) => value.toLowerCase().replace(/(^|\s|&)\w/g, (letter) => letter.toUpperCase());
 const projectHeading = (group, title, heading) => heading || (title.includes('《') ? `${group} ${title}` : `${group} - ${title}`);
+const getYouTubeVideoId = (url) => {
+  if (!url) return null;
+  const parsedUrl = new URL(url);
+  if (parsedUrl.hostname === 'youtu.be') return parsedUrl.pathname.split('/').filter(Boolean)[0] || null;
+  return parsedUrl.hostname.includes('youtube.com') ? parsedUrl.searchParams.get('v') : null;
+};
 
 const renderProjectGrid = () => {
   const projectGrid = document.querySelector('#project-grid');
@@ -39,12 +49,13 @@ const renderProjectGrid = () => {
       artwork.setAttribute('role', 'img');
       artwork.setAttribute('aria-label', `Video thumbnail for ${item.heading || projectHeading(item.group, item.title)}`);
 
-      const youtubeMatch = item.url?.match(/[?&]v=([^&]+)/);
-      const coverUrl = item.cover || (youtubeMatch ? `https://img.youtube.com/vi/${youtubeMatch[1]}/hqdefault.jpg` : null);
+      const youtubeVideoId = getYouTubeVideoId(item.url);
+      const coverUrl = item.cover || (youtubeVideoId ? `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg` : null);
       if (coverUrl) {
         const coverImage = document.createElement('img');
         coverImage.className = 'project-cover-image';
-        coverImage.src = coverUrl;
+        if (youtubeVideoId && item.coverCrop !== false) coverImage.classList.add('youtube-cover');
+        coverImage.src = item.cover ? `${coverUrl}?v=20261010f` : coverUrl;
         coverImage.alt = '';
         artwork.append(coverImage);
         artwork.classList.add('has-cover');
@@ -115,9 +126,10 @@ if (project && document.querySelector('.project-page')) {
       projectMedia.classList.add('is-instagram');
       projectLink.replaceWith(player);
     }
-    const youtubeMatch = project.url.match(/[?&]v=([^&]+)/);
-    if (youtubeMatch) {
-      const thumbnail = `https://img.youtube.com/vi/${youtubeMatch[1]}/maxresdefault.jpg`;
+    const youtubeVideoId = getYouTubeVideoId(project.url);
+    if (youtubeVideoId) {
+      projectMedia.classList.add('is-youtube');
+      const thumbnail = `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
       projectImage.src = thumbnail;
       projectImage.alt = `${project.title} video thumbnail`;
       projectImage.style.filter = 'none';
@@ -126,7 +138,7 @@ if (project && document.querySelector('.project-page')) {
       projectLink.addEventListener('click', (event) => {
         event.preventDefault();
         const player = document.createElement('iframe');
-        player.src = `https://www.youtube-nocookie.com/embed/${youtubeMatch[1]}?autoplay=1&rel=0`;
+        player.src = `https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&rel=0`;
         player.title = `${project.title} video`;
         player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
         player.allowFullscreen = true;
