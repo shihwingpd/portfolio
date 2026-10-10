@@ -1,6 +1,7 @@
 const projects = {
-  'sonic-reborn-photo-shooting': { date: '2026-08', title: 'Photo Shooting', group: 'Sonic Reborn', role: 'Gaffer', art: 'art-afterlight', cover: 'assets/covers/sonic-reborn-photo-shooting.jpg' },
-  'chan-ho-yan-dance-theatre': { date: '2026-05', title: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', heading: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', group: 'Chan Ho Yan', role: 'Light Designer', art: 'art-still-water', cover: 'assets/covers/chan-ho-yan-dance-theatre.jpg' },
+  'vincy-so-concert': { date: '2026-05', title: '《海上、最後の夜》音樂會', group: 'Vincy So', role: 'Light Designer', art: 'art-night-shift' },
+  'sonic-reborn-photo-shooting': { date: '2026-08', title: 'Photo Shooting', group: 'Sonic Reborn', role: 'Gaffer', art: 'art-afterlight', cover: 'assets/covers/sonic-reborn-photo-shooting.jpg', images: ['assets/projects/sonic-reborn/lt-1.jpg', 'assets/projects/sonic-reborn/lamb-07.jpg', 'assets/projects/sonic-reborn/mm-01.jpg', 'assets/projects/sonic-reborn/y2-01.jpg'] },
+  'chan-ho-yan-dance-theatre': { date: '2026-05', title: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', heading: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', group: 'Chan Ho Yan', role: 'Light Designer', art: 'art-still-water', cover: 'assets/covers/chan-ho-yan-dance-theatre.jpg', images: ['assets/projects/chan-ho-yan/DSC06039.jpg', 'assets/projects/chan-ho-yan/DSC05943.jpg', 'assets/projects/chan-ho-yan/DSC05955.jpg', 'assets/projects/chan-ho-yan/DSC06030.jpg', 'assets/projects/chan-ho-yan/DSC06071.jpg'] },
   'hyukoh-paul-remake': { date: '2025-05', title: '《Paul》 Remake MV', group: 'HYUKOH', role: 'Gaffer', art: 'art-night-shift', url: 'https://youtu.be/C5jH5oZGg-w?si=1PQgvUEQJ25vMC1P', cover: 'assets/covers/hyukoh-paul-remake.jpg' },
   'essential-shampoo-advertisement': { date: '2025-03', title: 'Essential Shampoo Advertisement (IG Reels)', group: '@moon.cytt', role: 'Gaffer', art: 'art-soft-focus', url: 'https://www.instagram.com/reel/DHx4JIvB4lI/?stkn=YXhwN3MxOWVmbmlq' },
   'mint-studio-centrestage': { date: '2026-09', title: 'Centrestage', heading: 'mint studio X Centrestage', role: 'Videographer', group: 'Mint Studio X', art: 'art-still-water', url: 'https://www.instagram.com/reel/DdWLYNEzQ41/?stkn=MWhxejdhNG9sbjM2aw==', cover: 'assets/covers/mint-studio-centrestage.jpg' },
@@ -8,7 +9,7 @@ const projects = {
   'vincy-so-final-night': { date: '2026-03', title: '《海上、最後の夜》Concept Video', role: 'Gaffer', group: 'Vincy So', art: 'art-afterlight', url: 'https://www.instagram.com/reel/DWteOYgE4Jj/?stkn=MXYxMTE0bHV3cjgyYw==', cover: 'assets/covers/vincy-so-final-night.jpg' },
   'esprit-brand-interview': { date: '2026-03', title: '品牌專訪 ESPRIT', heading: 'mint interview | 品牌專訪 ESPRIT', role: 'Camera Assistant', group: 'mint interview', art: 'art-soft-focus', url: 'https://www.instagram.com/reel/DVYCLURk8BD/?stkn=MTVoMTQ0bzBnenhscA==', cover: 'assets/covers/esprit-brand-interview.jpg' },
   'murfi-lau-interview': { date: '2025-08', title: 'MURFI LAU', heading: 'mint interview | MURFI LAU', role: 'Camera Assistant', group: 'mint interview', art: 'art-night-shift', url: 'https://www.instagram.com/reel/DQWliKnCT6F/?stkn=MXJvcnR5bGR0Z3IwOQ==', cover: 'assets/covers/murfi-lau-interview.jpg' },
-  nice: { date: '2025-02', title: '《nice》', role: 'Gaffer', group: 'Butterfly Peas', art: 'art-still-water', url: 'https://www.youtube.com/watch?v=JexknY0z2co', cover: 'assets/covers/nice.jpg' },
+  nice: { date: '2025-02', title: '《nice》', role: 'Gaffer', group: 'Butterfly Peas', art: 'art-still-water', url: 'https://www.youtube.com/watch?v=JexknY0z2co', cover: 'assets/covers/nice.jpg', detailThumbnail: 'assets/covers/nice-detail.jpg' },
   'shi-fu-da-hai': { date: '2025-02', title: '《石浮大海》', role: 'Gaffer', group: 'Tofu Kingdom', art: 'art-night-shift', url: 'https://www.youtube.com/watch?v=yV9DLP1MN98', cover: 'assets/covers/shi-fu-da-hai.jpg' },
   'band-show-recording': { date: '2025-01', title: 'Band Show Recording', role: 'Light Designer', group: 'Tofu Kingdom', art: 'art-soft-focus' },
   'catch-a-feeling': { date: '2025-01', title: 'Catch a Feeling', role: 'Camera Assistant', group: 'Aska Cheung', art: 'art-second-take', url: 'https://www.youtube.com/watch?v=qfCJF0ZAgoA', cover: 'assets/covers/catch-a-feeling.jpg' },
@@ -32,12 +33,30 @@ const getYouTubeVideoId = (url) => {
   return parsedUrl.hostname.includes('youtube.com') ? parsedUrl.searchParams.get('v') : null;
 };
 
-const renderProjectGrid = () => {
+const projectCategories = {
+  'Video Production': [
+    'vincy-so-final-night', 'mint-studio-centrestage', 'esprit-brand-interview', 'murfi-lau-interview',
+    'hyukoh-paul-remake', 'essential-shampoo-advertisement', 'nice', 'shi-fu-da-hai',
+    'catch-a-feeling', 'animals-in-the-city', 'temporary-love-map', 'night-glow',
+    'bad-good-person', 'mo-yang', 'polyu-dsai-promotion', 'ten-number-pier'
+  ],
+  'Stage Lighting': ['chan-ho-yan-dance-theatre', 'band-show-recording', 'vincy-so-concert'],
+  Photography: ['sonic-reborn-photo-shooting']
+};
+
+const renderProjectGrid = (category = 'Video Production') => {
   const projectGrid = document.querySelector('#project-grid');
   if (!projectGrid) return;
 
   projectGrid.replaceChildren();
+  projectGrid.setAttribute('aria-label', `${category} projects`);
+  document.querySelectorAll('.project-category').forEach((button) => {
+    const selected = button.dataset.category === category;
+    button.classList.toggle('is-active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
   Object.entries(projects)
+    .filter(([key]) => projectCategories[category]?.includes(key))
     .sort(([, first], [, second]) => second.date.localeCompare(first.date))
     .forEach(([key, item]) => {
       const card = document.createElement('a');
@@ -74,6 +93,10 @@ const renderProjectGrid = () => {
     });
 };
 
+document.querySelectorAll('.project-category').forEach((button) => {
+  button.addEventListener('click', () => renderProjectGrid(button.dataset.category));
+});
+
 renderProjectGrid();
 
 if (project && document.querySelector('.project-page')) {
@@ -105,7 +128,10 @@ if (project && document.querySelector('.project-page')) {
     projectVideo.src = project.video;
     projectVideo.hidden = false;
   } else if (galleryImages.length > 0) {
-    projectLink.hidden = true;
+    projectLink.removeAttribute('href');
+    projectLink.removeAttribute('target');
+    projectLink.setAttribute('aria-label', `${project.title} photo gallery`);
+    projectLink.hidden = false;
     updateGallery();
   } else if (project.url) {
     projectLink.href = project.url;
@@ -129,8 +155,8 @@ if (project && document.querySelector('.project-page')) {
     const youtubeVideoId = getYouTubeVideoId(project.url);
     if (youtubeVideoId) {
       projectMedia.classList.add('is-youtube');
-      const thumbnail = `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
-      projectImage.src = thumbnail;
+      const thumbnail = project.detailThumbnail || `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
+      projectImage.src = project.detailThumbnail ? `${thumbnail}?v=20261010` : thumbnail;
       projectImage.alt = `${project.title} video thumbnail`;
       projectImage.style.filter = 'none';
       projectImage.classList.add('project-thumbnail-image');
