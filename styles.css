@@ -76,7 +76,7 @@ h1 em { font-style: normal; font-weight: 300; letter-spacing: -.055em; }
 .contact-links a { border-bottom: 1px solid currentColor; }
 .back-link { display: inline-block; margin-bottom: 80px; color: var(--muted); font-size: 11px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; }
 .project-page .back-link { letter-spacing: .08em; }
-.project-heading { max-width: 730px; margin-bottom: 60px; letter-spacing: .08em; }
+.project-heading { max-width: 1000px; margin-bottom: 60px; letter-spacing: .08em; }
 .project-page h1 { font-size: clamp(22px, 3vw, 42px); }
 .project-heading h1 { letter-spacing: .08em; }
 .project-position { margin: 12px 0 0; font-size: 17px; font-weight: 300; letter-spacing: .06em; line-height: 1.5; }

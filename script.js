@@ -1,9 +1,9 @@
 const projects = {
-  'vincy-so-concert': { date: '2026-05', title: '《海上、最後の夜》音樂會', group: 'Vincy So', role: 'Light Designer', art: 'art-night-shift' },
+  'vincy-so-concert': { date: '2026-05', title: '《海上、最後の夜》音樂會', group: 'Vincy So', role: 'Light Designer', art: 'art-night-shift', cover: 'assets/covers/vincy-so-concert.jpg', images: ['assets/projects/vincy-so-concert/DSC08873Edited.jpg', 'assets/projects/vincy-so-concert/DSC08884Edited.jpg', 'assets/projects/vincy-so-concert/DSC08897Edited.jpg', 'assets/projects/vincy-so-concert/DSC08953Edited.jpg', 'assets/projects/vincy-so-concert/DSC08958Edited.jpg', 'assets/projects/vincy-so-concert/DSC09183Edited.jpg', 'assets/projects/vincy-so-concert/DSC09194Edited.jpg', 'assets/projects/vincy-so-concert/DSC09552Edited.jpg'] },
   'sonic-reborn-photo-shooting': { date: '2026-08', title: 'Photo Shooting', group: 'Sonic Reborn', role: 'Gaffer', art: 'art-afterlight', cover: 'assets/covers/sonic-reborn-photo-shooting.jpg', images: ['assets/projects/sonic-reborn/lt-1.jpg', 'assets/projects/sonic-reborn/lamb-07.jpg', 'assets/projects/sonic-reborn/mm-01.jpg', 'assets/projects/sonic-reborn/y2-01.jpg'] },
   'chan-ho-yan-dance-theatre': { date: '2026-05', title: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', heading: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', group: 'Chan Ho Yan', role: 'Light Designer', art: 'art-still-water', cover: 'assets/covers/chan-ho-yan-dance-theatre.jpg', images: ['assets/projects/chan-ho-yan/DSC06039.jpg', 'assets/projects/chan-ho-yan/DSC05943.jpg', 'assets/projects/chan-ho-yan/DSC05955.jpg', 'assets/projects/chan-ho-yan/DSC06030.jpg', 'assets/projects/chan-ho-yan/DSC06071.jpg'] },
   'hyukoh-paul-remake': { date: '2025-05', title: '《Paul》 Remake MV', group: 'HYUKOH', role: 'Gaffer', art: 'art-night-shift', url: 'https://youtu.be/C5jH5oZGg-w?si=1PQgvUEQJ25vMC1P', cover: 'assets/covers/hyukoh-paul-remake.jpg' },
-  'essential-shampoo-advertisement': { date: '2025-03', title: 'Essential Shampoo Advertisement (IG Reels)', group: '@moon.cytt', role: 'Gaffer', art: 'art-soft-focus', url: 'https://www.instagram.com/reel/DHx4JIvB4lI/?stkn=YXhwN3MxOWVmbmlq' },
+  'essential-shampoo-advertisement': { date: '2025-03', title: 'Essential Shampoo Advertisement (IG Reels)', group: '@moon.cytt', role: 'Gaffer', art: 'art-soft-focus', url: 'https://www.instagram.com/reel/DHx4JIvB4lI/?stkn=YXhwN3MxOWVmbmlq', cover:'assets/covers/essential-shampoo-advertisement.jpg' },
   'mint-studio-centrestage': { date: '2026-09', title: 'Centrestage', heading: 'mint studio X Centrestage', role: 'Videographer', group: 'Mint Studio X', art: 'art-still-water', url: 'https://www.instagram.com/reel/DdWLYNEzQ41/?stkn=MWhxejdhNG9sbjM2aw==', cover: 'assets/covers/mint-studio-centrestage.jpg' },
   'polyu-dsai-promotion': { date: '2026-04', title: 'Promotion Video', role: 'Gaffer', group: 'PolyU DSAI', art: 'art-soft-focus', cover: 'assets/covers/polyu-dsai-promotion.png' },
   'vincy-so-final-night': { date: '2026-03', title: '《海上、最後の夜》Concept Video', role: 'Gaffer', group: 'Vincy So', art: 'art-afterlight', url: 'https://www.instagram.com/reel/DWteOYgE4Jj/?stkn=MXYxMTE0bHV3cjgyYw==', cover: 'assets/covers/vincy-so-final-night.jpg' },
@@ -37,10 +37,10 @@ const projectCategories = {
   'Video Production': [
     'vincy-so-final-night', 'mint-studio-centrestage', 'esprit-brand-interview', 'murfi-lau-interview',
     'hyukoh-paul-remake', 'essential-shampoo-advertisement', 'nice', 'shi-fu-da-hai',
-    'catch-a-feeling', 'animals-in-the-city', 'temporary-love-map', 'night-glow',
+    'catch-a-feeling', 'temporary-love-map', 'night-glow',
     'bad-good-person', 'mo-yang', 'polyu-dsai-promotion', 'ten-number-pier'
   ],
-  'Stage Lighting': ['chan-ho-yan-dance-theatre', 'band-show-recording', 'vincy-so-concert'],
+  'Stage Lighting': ['chan-ho-yan-dance-theatre', 'vincy-so-concert'],
   Photography: ['sonic-reborn-photo-shooting']
 };
 
