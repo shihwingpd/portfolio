@@ -51,11 +51,11 @@ h1 em { font-style: normal; font-weight: 300; letter-spacing: -.055em; }
 .project-art::after { content: ''; position: absolute; inset: 16px; border: 1px solid rgba(255,255,255,.35); mix-blend-mode: overlay; }
 .project-card .project-art::after { display: none; }
 .project-card:hover .project-art { transform: scale(.985); filter: grayscale(0); }
-.art-afterlight { background: radial-gradient(ellipse at 70% 38%, #fafafa 0 7%, transparent 8%), linear-gradient(125deg, #202020 0 41%, #646464 42% 53%, #dadada 54%); }
-.art-still-water { background: linear-gradient(165deg, #bdbdbd 0 48%, #282828 49% 63%, #ecebe7 64%); }
-.art-night-shift { background: radial-gradient(circle at 32% 38%, #dedbd3 0 8%, transparent 9%), linear-gradient(80deg, #121212, #787878 46%, #252525 47%); }
-.art-soft-focus { background: radial-gradient(ellipse at center, #efeee9 0 22%, #a09f9a 23% 49%, #272727 50%); }
-.art-second-take { background: linear-gradient(28deg, #161616 0 42%, #bebdb7 43% 60%, #f0efeb 61%); }
+.art-afterlight { background-color: var(--dark-surface) }
+.art-still-water { background-color: var(--dark-surface) }
+.art-night-shift { background-color: var(--dark-surface) }
+.art-soft-focus { background-color: var(--dark-surface) }
+.art-second-take { background-color: var(--dark-surface) }
 .project-meta { display: block; padding-top: 6px; font-size: 13px; line-height: 1.2; }
 .project-meta strong { display: block; font-weight: 400; letter-spacing: .06em; }
 .project-meta small { display: block; color: var(--muted); font-size: 11px; font-weight: 400; letter-spacing: .06em; text-transform: none; }
