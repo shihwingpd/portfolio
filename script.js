@@ -1,4 +1,5 @@
 const projects = {
+  'rain-in-the-mist': {date: '2026-04', title: '《霧裏尋雨》'}, group: 'CUHK Art Direction', role: 'Gaffer', art: 'art-night-shift', url: 'https://youtu.be/Z1AfI5ZaeJ0?si=zPkU9exJd90UCLDZ', cover: 'assets/covers/rain-in-the-mist.jpg' },
   'vincy-so-concert': { date: '2026-05', title: '《海上、最後の夜》音樂會', group: 'Vincy So', role: 'Light Designer', art: 'art-night-shift', cover: 'assets/covers/vincy-so-concert.jpg', images: ['assets/projects/vincy-so-concert/DSC08873Edited.jpg', 'assets/projects/vincy-so-concert/DSC08884Edited.jpg', 'assets/projects/vincy-so-concert/DSC08897Edited.jpg', 'assets/projects/vincy-so-concert/DSC08953Edited.jpg', 'assets/projects/vincy-so-concert/DSC08958Edited.jpg', 'assets/projects/vincy-so-concert/DSC09183Edited.jpg', 'assets/projects/vincy-so-concert/DSC09194Edited.jpg', 'assets/projects/vincy-so-concert/DSC09552Edited.jpg'] },
   'sonic-reborn-photo-shooting': { date: '2026-08', title: 'Photo Shooting', group: 'Sonic Reborn', role: 'Gaffer', art: 'art-afterlight', cover: 'assets/covers/sonic-reborn-photo-shooting.jpg', images: ['assets/projects/sonic-reborn/lt-1.jpg', 'assets/projects/sonic-reborn/lamb-07.jpg', 'assets/projects/sonic-reborn/mm-01.jpg', 'assets/projects/sonic-reborn/y2-01.jpg'] },
   'chan-ho-yan-dance-theatre': { date: '2026-05', title: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', heading: '《！ . . . .  n . . i 》 個人舞蹈劇場 by Chan Ho Yan', group: 'Chan Ho Yan', role: 'Light Designer', art: 'art-still-water', cover: 'assets/covers/chan-ho-yan-dance-theatre.jpg', images: ['assets/projects/chan-ho-yan/DSC06039.jpg', 'assets/projects/chan-ho-yan/DSC05943.jpg', 'assets/projects/chan-ho-yan/DSC05955.jpg', 'assets/projects/chan-ho-yan/DSC06030.jpg', 'assets/projects/chan-ho-yan/DSC06071.jpg'] },
@@ -13,7 +14,7 @@ const projects = {
   'shi-fu-da-hai': { date: '2025-02', title: '《石浮大海》', role: 'Gaffer', group: 'Tofu Kingdom', art: 'art-night-shift', url: 'https://www.youtube.com/watch?v=yV9DLP1MN98', cover: 'assets/covers/shi-fu-da-hai.jpg' },
   'band-show-recording': { date: '2025-01', title: 'Band Show Recording', role: 'Light Designer', group: 'Tofu Kingdom', art: 'art-soft-focus' },
   'catch-a-feeling': { date: '2025-01', title: 'Catch a Feeling', role: 'Camera Assistant', group: 'Aska Cheung', art: 'art-second-take', url: 'https://www.youtube.com/watch?v=qfCJF0ZAgoA', cover: 'assets/covers/catch-a-feeling.jpg' },
-  'animals-in-the-city': { date: '2024-11', title: '《Animals In The City》', role: 'Gaffer', group: 'Short Film', art: 'art-night-shift' },
+  'animals-in-the-city': { date: '2024-11', title: '《Animals In The City》', role: 'Gaffer', group: 'Short Film', art: 'art-night-shift', url: 'https://www.youtube.com/watch?v=LtuFFq7OiaY', cover: 'assets/covers/animals-in-the-city.jpg' },
   'temporary-love-map': { date: '2024-11', title: '《臨時戀愛地圖》', role: 'Lighting Assistant', group: '創+作', art: 'art-afterlight', url: 'https://www.youtube.com/watch?v=wd1Je2rwF6Q', cover: 'assets/covers/temporary-love-map1.jpg' },
   'night-glow': { date: '2024-10', title: '《夜光漫遊》', role: 'Camera Assistant', group: 'Venus Chi', art: 'art-still-water', url: 'https://www.youtube.com/watch?v=awYDUVe56_g', cover: 'assets/covers/night-glow.jpg' },
   'ten-number-pier': { date: '2024-07', title: '《十號碼頭的半對》', role: 'Videographer', group: 'OneUp', art: 'art-afterlight', url: 'https://www.youtube.com/watch?v=h4H3I9oFI_s', cover: 'assets/covers/ten-number-pier.jpg' },
@@ -36,8 +37,8 @@ const getYouTubeVideoId = (url) => {
 const projectCategories = {
   'Video Production': [
     'vincy-so-final-night', 'mint-studio-centrestage', 'esprit-brand-interview', 'murfi-lau-interview',
-    'hyukoh-paul-remake', 'essential-shampoo-advertisement', 'nice', 'shi-fu-da-hai',
-    'catch-a-feeling', 'temporary-love-map', 'night-glow',
+    'hyukoh-paul-remake', 'rain-in-the-mist',  'essential-shampoo-advertisement', 'nice', 'shi-fu-da-hai',
+    'catch-a-feeling', 'animals-in-the-city', 'temporary-love-map', 'night-glow',
     'bad-good-person', 'mo-yang', 'ten-number-pier'
   ],
   'Stage Lighting': ['chan-ho-yan-dance-theatre', 'vincy-so-concert'],
